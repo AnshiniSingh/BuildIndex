@@ -1,0 +1,29 @@
+Pre-requisite
+=============================
+Set up three variables in settings
+-> BOOK_PATH            -- where the pages to be read are present
+-> EXCLUDE_FILE_PATH    -- where the file with words to be excluded are present
+-> INDEX_FILE_PATH      -- where the index file for the pages is to be formed
+
+Object Oriented Design
+=============================
+The code is encapsulated into three main modules:
+1st. When the index for all Pages are performed
+    Implementation : This task is performed in "read_words" method of "ReadFiles" Class
+        The method reads the file as object and iterate through each line's each word at a time
+         and checks for the "key" ie the word, that whether it is present or not
+
+2nd. Exclude the words mentioned in exclude-words file:
+    Implementation : This task is performed in "exclude_words" method of "ExcludeValues" Class
+        The method reads the exclude-words file and checks if that word is present in the index created in first step
+        it pops the non required word, creating an index of required words only.
+
+3rd. Write into index file
+    Implementation : This task is performed in to write the index object into a file:
+        The method "write_into_file" of class "WriteIndexFile" writes the content passed to it in a file.(index here)
+
+
+Notes
+=============================
+1. Since all methods in python are public by default, So abstraction cannot be visible clearly here.
+2. The code is divided into three different classes to make modularity through encapsulation.
